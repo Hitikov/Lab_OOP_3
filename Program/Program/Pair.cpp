@@ -34,6 +34,11 @@ Pair Pair::operator+(const double& y) const {
 Pair Pair::operator-(const Pair& p) const {
 	return Pair(this->first - p.first, this->second - p.second);
 }
+Pair Pair::operator=(const Pair& p) {
+	this->first = p.first;
+	this->second = p.second;
+	return *this;
+}
 
 //Дружественные перегруженные операции
 Pair operator+(const int& x, const Pair& p) {
@@ -44,5 +49,13 @@ Pair operator+(const double& y, const Pair& p) {
 }
 ostream& operator<<(ostream& str, const Pair& p) {
 	str << " " << p.first << " : " << p.second << endl;
+	return str;
+}
+
+istream& operator>>(istream& str, Pair& p) {
+	cout << "Enter int value: ";
+	str >> p.first;
+	cout << "Enter double value: ";
+	str >> p.second;
 	return str;
 }

@@ -22,7 +22,9 @@ public:
 	Pair operator+(const int& x) const;
 	Pair operator+(const double& y) const;
 	Pair operator-(const Pair& p) const;
+	Pair operator=(const Pair&);
 	friend Pair operator+(const int& x, const Pair& p);
 	friend Pair operator+(const double& y, const Pair& p);
 	friend ostream& operator<<(ostream& str, const Pair& p);
+	friend istream& operator>>(istream& str, Pair& p);
 };
